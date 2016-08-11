@@ -8,6 +8,12 @@ import java.util.*;
  * Created by Evgenii_Nemich on 8/8/2016.
  */
 public class Helpful {
+    public static String getName(String task, int num) {
+        String id = "";
+        if (num > 0)
+            id = " (" + num + ")";
+        return "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_" + task + id + ".txt";
+    }
     public static String readSingleStringFile(String name) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(name));
         String line;
@@ -81,5 +87,30 @@ public class Helpful {
         if (max == g)
             return "G";
         return "T";
+    }
+
+    public static void printToFile(String file, String data) {
+        BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter(file));
+            writer.write(data);
+
+        } catch (IOException e) {
+        } finally {
+            try {
+                if (writer != null)
+                    writer.close();
+            } catch (IOException e) {
+            }
+        }
+//        PrintWriter out;
+//        try {
+//            out = new PrintWriter(file);
+//            for (int i = 0; i < data.size(); i++) {
+//                out.println(data.get(i));
+//            }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
     }
 }
