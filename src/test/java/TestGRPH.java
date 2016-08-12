@@ -26,10 +26,11 @@ public class TestGRPH {
         assertThat(actual, is(expected));
 
         if (ready) {
-            file = getName("grph", 1);
+            file = getName("grph", 8    );
             input = Helpful.readSequences(file);
             actual = GRPH.doWork(input);
-            Helpful.printToFile(getName("grph", 1000), actual);
+            System.out.println(actual);
+            Helpful.printToFile(getName("grph", 1001), actual);
         }
     }
 }
