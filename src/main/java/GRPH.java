@@ -1,30 +1,39 @@
+import tools.Pair;
 import tools.Sequence;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Evgenii_Nemich on 8/10/2016.
  */
 public class GRPH {
-    public static String doWork(List<Sequence> input) {
+    public static String doWork(List<Sequence> input, int overlap) {
         String res = "";
+
+        List<Pair<String, String>> result = new ArrayList<>();
+        List<Pair<String, String>> graph = new ArrayList<>();
 
         for (Sequence seqOut : input) {
             for (Sequence seqIn : input) {
                 if (!seqIn.equals(seqOut)) {
-
-                    boolean equal = true;
-                    for (int i = 0; i < seqOut.getSequence().length() / 2 || i < seqIn.getSequence().length() / 2; i++) {
-                        if (seqOut.getSequence().charAt(seqOut.getSequence().length() - 1 - i) != seqIn.getSequence().charAt(i)) {
-                            equal = false;
+                    for (int i = 0; i < overlap; i++) {
+                        if (seqOut.getSequence().charAt(seqOut.getSequence().length() - overlap + i) != seqIn.getSequence().charAt(i)) {
                             break;
+                        } else if (i == overlap - 1) {
+                            graph.add(new Pair(seqOut.getName(), seqIn.getName()));
                         }
                     }
-                    if (equal) {
-                        res += seqOut.getName() + " " + seqIn.getName() + "\n";
-                    }
-
                 }
+            }
+        }
+
+        int i = 0;
+        for (Pair<String, String> pair : graph) {
+            if (pair.keysInValuesAmount(graph).size() == 0 || pair.valuesInKeysAmount(graph).size() == 0) {
+                result.add(pair);
+                i++;
+                res += pair.getKey() + " " + pair.getValue() + "\n";
             }
         }
 

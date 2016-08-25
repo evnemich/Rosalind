@@ -21,15 +21,16 @@ public class TestGRPH {
         String expected = "Rosalind_0498 Rosalind_2391\n" +
                 "Rosalind_0498 Rosalind_0442\n" +
                 "Rosalind_2391 Rosalind_2323\n";
-        String actual = GRPH.doWork(input);
+        String actual = GRPH.doWork(input, 3);
 
         assertThat(actual, is(expected));
 
         if (ready) {
-            file = getName("grph", 8    );
+            file = getName("grph", 14);
             input = Helpful.readSequences(file);
-            actual = GRPH.doWork(input);
+            actual = GRPH.doWork(input, 3);
             System.out.println(actual);
+            System.out.println(null + "13");
             Helpful.printToFile(getName("grph", 1001), actual);
         }
     }
