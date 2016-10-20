@@ -1,5 +1,5 @@
 import org.junit.Test;
-import tools.Helpful;
+import tools.Tools;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -12,7 +12,7 @@ public class TestPROT {
     public void name() throws Exception {
         String file = "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_prot.txt";
 
-        String input = Helpful.readSingleStringFile(file);
+        String input = Tools.readSingleStringFile(file);
         String expected = "MAMAPRTEINSTRING";
         String actual = PROT.doWork(input);
 
@@ -22,7 +22,7 @@ public class TestPROT {
         assertThat(actual, is(expected));
 
         file = "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_prot(1).txt";
-        input = Helpful.readSingleStringFile(file);
+        input = Tools.readSingleStringFile(file);
         System.out.println(PROT.doWork(input));
     }
 }

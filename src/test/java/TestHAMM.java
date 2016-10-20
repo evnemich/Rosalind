@@ -1,5 +1,5 @@
 import org.junit.Test;
-import tools.Helpful;
+import tools.Tools;
 
 import java.util.List;
 
@@ -13,14 +13,14 @@ public class TestHAMM {
     @Test
     public void name() throws Exception {
         String in = "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_hamm.txt";
-        List<String> strings = Helpful.readMultipleStringFile(in);
+        List<String> strings = Tools.readMultipleStringFile(in);
         int expected = 7;
 
         int act = HAMM.doWork(strings.get(0), strings.get(1));
         assertThat(act, is(expected));
 
         in = "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_hamm(1).txt";
-        strings = Helpful.readMultipleStringFile(in);
+        strings = Tools.readMultipleStringFile(in);
         System.out.println(HAMM.doWork(strings.get(0), strings.get(1)));
     }
 }

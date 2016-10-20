@@ -1,5 +1,5 @@
 import org.junit.Test;
-import tools.Helpful;
+import tools.Tools;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -16,7 +16,7 @@ public class TestREVC {
 
         assertThat(actual, is(expected));
 
-        in = Helpful.readSingleStringFile("C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_revc(1).txt");
+        in = Tools.readSingleStringFile("C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_revc(1).txt");
         System.out.println(REVC.doWork(in));
     }
 }

@@ -1,4 +1,4 @@
-import tools.Helpful;
+import tools.Tools;
 import tools.Sequence;
 
 import java.util.List;
@@ -36,7 +36,7 @@ public class CONS {
                 }
             }
 
-            result += Helpful.getMaxChar(a, c, g, t);
+            result += Tools.getMaxChar(a, c, g, t);
 
             resultA += " " + a;
             resultC += " " + c;

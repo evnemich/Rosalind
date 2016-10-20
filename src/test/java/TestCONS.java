@@ -1,5 +1,5 @@
 import org.junit.Test;
-import tools.Helpful;
+import tools.Tools;
 import tools.Sequence;
 
 import java.util.List;
@@ -16,7 +16,7 @@ public class TestCONS {
         boolean ready = true;
         String file = "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_cons.txt";
 
-        List<Sequence> input = Helpful.readSequences(file);
+        List<Sequence> input = Tools.readSequences(file);
         String expected = "ATGCAACT\n" +
                 "A: 5 1 0 0 5 5 0 0\n" +
                 "C: 0 0 1 4 2 0 6 1\n" +
@@ -28,7 +28,7 @@ public class TestCONS {
 
         if (ready) {
             file = "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_cons(1).txt";
-            input = Helpful.readSequences(file);
+            input = Tools.readSequences(file);
             System.out.println(CONS.doWork(input));
         }
     }

@@ -1,5 +1,5 @@
 import org.junit.Test;
-import tools.Helpful;
+import tools.Tools;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class TestFIBD {
         boolean ready = true;
         String file = "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_fibd.txt";
 
-        List<Integer> input = Helpful.readIntegers(file, 2);
+        List<Integer> input = Tools.readIntegers(file, 2);
         long expected = 4;
         long actual = FIBD.doWork(input.get(0), 1, input.get(1));
 
@@ -27,7 +27,7 @@ public class TestFIBD {
 
         if (ready) {
             file = "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_fibd(1).txt";
-            input = Helpful.readIntegers(file, 2);
+            input = Tools.readIntegers(file, 2);
             System.out.println(FIBD.doWork(input.get(0), 1, input.get(1)));
         }
     }

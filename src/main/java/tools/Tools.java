@@ -7,13 +7,30 @@ import java.util.*;
 /**
  * Created by Evgenii_Nemich on 8/8/2016.
  */
-public class Helpful {
+public class Tools {
     public static String getName(String task, int num) {
         String id = "";
         if (num > 0)
             id = " (" + num + ")";
         return "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_" + task + id + ".txt";
     }
+
+    public static String getDefaultDir() {
+        return "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\";
+    }
+
+    public static String putAnswer(String task, int num, String answer) {
+        String id = "";
+        if (num > 0)
+            id = " (" + num + ")";
+
+        String answerFile = "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_" + task + id + ".ans.txt";
+
+        printToFile(answerFile, answer);
+
+        return answerFile;
+    }
+
     public static String readSingleStringFile(String name) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(name));
         String line;
@@ -89,6 +106,21 @@ public class Helpful {
         return "T";
     }
 
+    public static double c(int m, int n){
+        return faktorial(n) / (faktorial(m) * faktorial(n - m));
+    }
+
+    public static double faktorial(double z)
+    {
+        if (z == 0 || z == 1)
+            return 1;
+        double result = 1;
+        for (int i = 1; i <= z; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
     public static void printToFile(String file, String data) {
         BufferedWriter writer = null;
         try {
@@ -103,6 +135,8 @@ public class Helpful {
             } catch (IOException e) {
             }
         }
+
+
 //        PrintWriter out;
 //        try {
 //            out = new PrintWriter(file);

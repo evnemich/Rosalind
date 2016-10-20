@@ -1,5 +1,5 @@
 import org.junit.Test;
-import tools.Helpful;
+import tools.Tools;
 
 
 import static org.hamcrest.core.Is.is;
@@ -17,7 +17,7 @@ public class TestRNA {
 
         assertThat(actual, is(expected));
 
-        in = Helpful.readSingleStringFile("C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_revc.txt");
+        in = Tools.readSingleStringFile("C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_revc.txt");
         System.out.println(RNA.doWork(in));
     }
 }

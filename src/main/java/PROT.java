@@ -1,4 +1,4 @@
-import tools.Helpful;
+import tools.Tools;
 
 import java.io.IOException;
 import java.util.Map;
@@ -11,7 +11,7 @@ public class PROT {
         String result = "";
         Map<String, String> db;
         try {
-            db = Helpful.readRNACodonTable("C:\\Users\\Evgenii_Nemich\\Downloads\\rosalind_rna_codon_table.txt");
+            db = Tools.readRNACodonTable("C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_rna_codon_table.txt");
             for (int i = 0; i < input.length(); i += 3) {
                 String substring = input.substring(i, i + 3);
                 if (db.get(substring).equals("Stop"))

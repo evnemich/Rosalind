@@ -1,5 +1,5 @@
 import org.junit.Test;
-import tools.Helpful;
+import tools.Tools;
 
 import java.util.List;
 
@@ -14,14 +14,14 @@ public class TestFIB {
     public void simpleTest() throws Exception {
         String in = "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_fib.txt";
         long expected = 19;
-        List<Integer> input = Helpful.readIntegers(in, 2);
+        List<Integer> input = Tools.readIntegers(in, 2);
         long actual = FIB.doWork(input.get(0), 1, input.get(1));
 
         assertThat(actual, is(expected));
 
 
         in = "C:\\Users\\Evgenii_Nemich\\Downloads\\Rosalind\\rosalind_fib(2).txt";
-        input = Helpful.readIntegers(in, 2);
+        input = Tools.readIntegers(in, 2);
         System.out.println(FIB.doWork(input.get(0), 1, input.get(1)));
     }
 }
